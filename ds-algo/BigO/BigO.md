@@ -133,3 +133,45 @@ boo([1,2,3,4,5]) // O(1) -- no additional space are taken
 ```
 
 Consider: Are additional space taken?
+
+### JS Length
+
+.length of a string can have different big O depending on the language.
+.length property is built-in in JS, .length is a simple lookup, which the big O is O(1).
+
+### JavaScript Loops
+
+forEach loop;
+
+```
+const findNemo = array => {
+  array.forEach(fish => {
+    if (fish === 'nemo') {
+      console.log('found NEMO!');
+    }
+  })
+};
+```
+
+for of loop;
+
+```
+const findNemo = array => {
+  for(let fish of array) {
+    if (fish === 'nemo) {
+      console.log('found NEMO!');
+    }
+  }
+};
+```
+
+## Section Summary
+
+Big O is used to describe how efficient (time / space) we can run our code.
+
+There's usually a trade-off between speed (time) and memory (space), big O describes the upper bound (worst case scenario) of our estimates.
+
+What is good code? -- Consider both 1. Readable and 2. Scalable.
+Sometimes, maybe readability matters more than scalability; maybe time complexity is less important than space complexity.
+
+_——「Premature optimization can be the root of all evil. 」_
