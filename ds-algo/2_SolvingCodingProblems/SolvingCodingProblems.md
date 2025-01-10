@@ -38,6 +38,9 @@ Learn when and why to use them, how to implement them, how to solve problems wit
 
 #### Data Structures
 
+A collection of values.
+Can think of data stuctures as compartment or container, a file cabinet, e.g. drawers to put clothes, fridge to put food, a folder for files. Each container is useful for its own thing.
+
 - Arrays
 - Hash Tables
 - Stacks
@@ -48,6 +51,8 @@ Learn when and why to use them, how to implement them, how to solve problems wit
 - Graphs
 
 #### Algorithms
+
+Steps or processes we put into place to manipulate these values.
 
 - Sorting
 - Dynamic Programming
