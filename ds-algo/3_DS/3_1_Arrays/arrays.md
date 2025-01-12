@@ -36,3 +36,8 @@ Having more control over memory allows you to tweak things to make things faster
 ```
 push() / append()* can be O(n) because when adding the element, it might copy the whole array to allocate more memory first, resulting n (length of array) operations.
 ```
+
+### Notes
+
+Treat any string question like an array question -- strings are array of characters.
+Convert the string into an array (e.g. with .split() in JS) and convert it back to string after operations with them.

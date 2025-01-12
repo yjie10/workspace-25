@@ -21,3 +21,36 @@ console.log('unshift x', strings);
 // splice -- insert element(s) in the middle of the array
 strings.splice(2, 0, 'y'); // O(n) similar to unshift
 console.log('splice y w/o deletion', strings);
+
+
+/* Exercise: Reverse A String */
+// Create a function that reverses a string; 
+
+function reverse(str) {
+  // input check
+  if (!str || str.length < 2 || typeof str !== 'string') {
+    return;
+  }
+
+  // convert the string into an array first, but ... in JS you can directly loop through a string w/o converting to array
+  // const strArray = str.split('');
+  let reversedStr = [];
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr.push(str[i]);
+  }
+  console.log(reversedStr.join(''));
+  return reversedStr.join('');
+}
+
+// using JS method
+function reverseJS(str) {
+  const reversedStr = str.split('').reverse().join('');
+  console.log(reversedStr);
+  return reversedStr;
+}
+
+reverse('Hello World');
+reverseJS('Reverse String Using JS Method');
+
+// One-liner using ES6 feature
+const reverseOneLine = str = str.split('').reverse();
