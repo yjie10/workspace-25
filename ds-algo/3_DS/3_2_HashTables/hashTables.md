@@ -35,3 +35,12 @@ And Hash will always be the same for the same input -- This is called **idempote
 With limited memory and enough data, it's unavoidable there will be collision.
 
 When collision happens, it slows down **reading** and **writing**. // O(1) -> O(n)
+
+### Hash Tables vs Arrays
+
+Hash tables are great when you want ...
+
+- fast access to values (comparing to O(n) time for Arrays)
+- insertion is O(1), can assume no collision in most cases (no need to shift elements like in Arrays)
+
+Note there's no concept of order for Hash Tables, no guarantee elements are next to each other.
