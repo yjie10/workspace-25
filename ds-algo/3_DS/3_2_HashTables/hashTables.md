@@ -14,13 +14,14 @@ basket.grapes = 10000; // key: grapes, value: 10000
 
 The **key** is used as the index as where to find the **value** in memory.
 
-Fast data access;
+Fast data access; Slow key iteration.
 
 Big O:
 insert O(1)
 lookup O(1)
 delete O(1)
 search O(1)
+space O(n)
 
 #### Hash Function
 
@@ -44,3 +45,13 @@ Hash tables are great when you want ...
 - insertion is O(1), can assume no collision in most cases (no need to shift elements like in Arrays)
 
 Note there's no concept of order for Hash Tables, no guarantee elements are next to each other.
+
+## Hash Tables Review
+
+Again, Hash Tables are good for:
+
+- Fast lookups \*Good collision resolution needed
+- Fast inserts
+- Flexible keys
+
+Trade-offs: fast access, more memory.
