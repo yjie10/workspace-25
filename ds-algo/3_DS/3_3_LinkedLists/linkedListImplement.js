@@ -85,6 +85,8 @@ class LinkedList {
     currentNode.next = newNode;
     newNode.next = nextNode;
     this.length++;
+
+    return this;
   }
 
   insertZTM(index, value) {
@@ -115,6 +117,19 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  remove(index) {
+    if (index === 0) {
+      this.head = this.head.next;
+    } else {
+      const prev = this.traverseToIndex(index - 1);
+      const nodeToRemove = prev.next;
+      prev.next = nodeToRemove.next;
+    }
+
+    this.length--;
+    return this;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -124,6 +139,8 @@ myLinkedList.prepend(1);
 myLinkedList.printList();
 myLinkedList.insert(1, 6);
 myLinkedList.printList();
-myLinkedList.insertZTM(0, 0);
+// myLinkedList.insertZTM(0, 0);
+// myLinkedList.printList();
+myLinkedList.remove(1);
 myLinkedList.printList();
 console.log(myLinkedList);

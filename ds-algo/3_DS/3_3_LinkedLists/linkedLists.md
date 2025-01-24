@@ -30,6 +30,8 @@ lookup (traversal) O(n)
 insert O(n)
 delete O(n)
 
+insert and delete takes O(n) because it requires traversal.
+
 ### What Is A Pointer?
 
 A **reference** to another place in memory.
