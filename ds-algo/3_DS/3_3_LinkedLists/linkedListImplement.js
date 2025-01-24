@@ -53,10 +53,77 @@ class LinkedList {
     this.head = newNode;
     this.length++;
   }
+
+  printList() {
+    const arr = [];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      arr.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    console.log(arr);
+    return arr;
+  }
+
+  insert(index, value) {
+    // check params
+    if (index >= this.length) {
+      return this.append(value);
+    }
+
+    const newNode = new Node(value);
+    let currentNode = this.head;
+
+    if (index === 0) {
+      this.prepend(value);
+    }
+
+    for (let i = 0; i < index - 1; i++) {
+      currentNode = currentNode.next;
+    }
+    const nextNode = currentNode.next;
+    currentNode.next = newNode;
+    newNode.next = nextNode;
+    this.length++;
+  }
+
+  insertZTM(index, value) {
+    if (index >= this.length) {
+      return this.append(value);
+    }
+
+    if (index === 0) {
+      return this.prepend(value);
+    }
+
+    const newNode = new Node(value);
+    let leader = this.traverseToIndex(index - 1);
+    const aft = leader.next;
+    leader.next = newNode;
+    newNode.next = aft;
+    this.length++;
+    return this.printList();
+  }
+
+  traverseToIndex(index) {
+    let counter = 0;
+    let currentNode = this.head;
+
+    while (counter !== index) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
+myLinkedList.printList();
+myLinkedList.insert(1, 6);
+myLinkedList.printList();
+myLinkedList.insertZTM(0, 0);
+myLinkedList.printList();
 console.log(myLinkedList);
