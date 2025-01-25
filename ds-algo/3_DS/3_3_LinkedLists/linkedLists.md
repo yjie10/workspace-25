@@ -42,3 +42,70 @@ const obj2 = obj1; // a pointer
 
 Both object 1 and object 2 points to the same location in memory.
 ```
+
+### Doubly Linked List
+
+Node contains another pointer which links to the previous node.
+
+Doubly linked lists allows us to traverse our list **backwards**.
+
+Big O:
+prepend O(1)
+append O(1)
+lookup O(n) // technically a little bit faster n/2 if we know which half to look for
+insert O(n)
+delete O(n)
+
+### Singly vs Doubly Linked Lists
+
+Singly Linked Lists:
+
+- simpler to implement.
+- requires less memory, makes insertion and deletion a little faster (less operations).
+
+but ...
+
+- cannot be reversed, or traverse from back to front.
+- if we lose ref to this.head, the list can actually be lost in memory forever.
+
+Doubly Linked Lists:
+
+- can be iterated, or traversed both from the front or from the back.
+- deletion of a previous node is easier.
+
+but ...
+
+- fairly complicated.
+- requires more memory.
+- slower insertion and deletion as it requires a bit more operations.
+
+Notes: most interview questions are singly linked lists related.
+
+### Reversing a Linked List
+
+pre: create 2 pointers: 1) prev that initially does not point at any node (null) and 2) curr which points at the current node, starting at the head.
+
+4 steps to reverse a linked list:
+
+1. create a new temp pointer which points to curr.next;
+2. set curr.next to prev;
+3. update prev to curr;
+4. update curr to next;
+
+and repeat.
+
+Lastly update tail to head, and head to prev.
+
+(helpful link to visualize: https://www.youtube.com/watch?v=S9kMVEUg-x4)
+
+## Linked Lists Review
+
+Linked Lists are low level data structures, it does get used in other data structures such as hash tables, stacks and queues.
+
+Pro:
+ordered
+flexible size
+
+Con:
+slow lookup
+more memory

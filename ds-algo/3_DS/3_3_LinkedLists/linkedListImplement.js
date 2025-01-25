@@ -32,6 +32,7 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
+
   append(value) {
     // const newNode = {
     //   value: value,
@@ -130,6 +131,44 @@ class LinkedList {
     this.length--;
     return this;
   }
+
+  reverseZTM() {
+    // length check
+    if (!this.head.next) {
+      return this.head;
+    }
+
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+
+    return this;
+  }
+
+  reverse() {
+    let prev = null;
+    let curr = this.head;
+
+    while (curr) {
+      const next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+
+    this.tail = this.head;
+    this.head = prev;
+    return this;
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -142,5 +181,10 @@ myLinkedList.printList();
 // myLinkedList.insertZTM(0, 0);
 // myLinkedList.printList();
 myLinkedList.remove(1);
+myLinkedList.printList();
+// myLinkedList.reverseZTM();
+myLinkedList.reverse();
+myLinkedList.printList();
+myLinkedList.reverse();
 myLinkedList.printList();
 console.log(myLinkedList);
