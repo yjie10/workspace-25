@@ -2,11 +2,6 @@
 // arrays: easier pop, append, simpler to implement
 // linked-lists: eaiser pop, append and can access last element even if you don't know the length, as long as we know this.tail
 
-
-// Queues: can build with either arrays linked-lists
-// arrays: not efficient because dequeue (removing first element) requires unshifting
-// linked-lists: easier to implement as we know this.head
-
 class Node {
   constructor(value) {
     this.value = value;

@@ -109,3 +109,20 @@ setTimeout is essentially a part of the Web APIs, that allows us to do asynchron
 ```
 
 The 'non-blocking' means in order to not block the single thread (waiting for a big task to finish before executing the next task), it can be asynchronous with callback functions.
+
+### Queues Using Stacks
+
+https://leetcode.com/problems/implement-queue-using-stacks/
+https://www.youtube.com/watch?v=eanwa3ht3YQ
+
+### Stacks and Queues Review
+
+Pros:
+
+- Fast Operations
+- Fast Peek
+- Ordered
+
+Con:
+
+- Slow Lookup
